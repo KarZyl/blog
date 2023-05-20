@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h3>
-   Dodaj nowy wpis
-</h3>
 
-<form action="" method="POST">
-  {{form.hidden_tag()}}
+<h3>Dodaj nowy wpis</h3>
+
+<form action="{{ url_for('create_or_edit_entry') }}" method="POST">
+   {{ form.hidden_tag() }}
    <div class="form-group">
        <label for="title">Tytuł wpisu</label>
        {{ form.title(class_="form-control") }}
